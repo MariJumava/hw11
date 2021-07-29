@@ -5,7 +5,7 @@ import './index.css';
 
 const Navbar = () => {
 
-    const types = ['square', 'cirle'];  
+    const types = ['1', '2'];  
     const colors = ['red', 'gray', 'blue', 'cyan', 'yellow', 'orange'];
 
     const [selectedType, setSelectedType] = useState(1)

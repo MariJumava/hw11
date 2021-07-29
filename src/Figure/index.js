@@ -8,8 +8,8 @@ const Figure = () => {
 
     return (
         <div className='wrap'>
-            <div className={form === 'square' ? 'square' : 'circle'} style={{background: `${color}`}}> 
-            {form === 'square' ? 'SQUARE' : 'CIRCLE'} </div>
+            <div className={form === '1' ? 'square' : 'circle'} style={{background: `${color}`}}> 
+            {form === '2' ? 'CIRCLE' : 'SQUARE'} </div>
         </div>
     )
 }
