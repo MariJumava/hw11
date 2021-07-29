@@ -1,0 +1,24 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin: 20px 50px;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    font-size: 25px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    font-size: 25px;
+    border-radius: 50%;
+}
