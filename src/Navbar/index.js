@@ -1,7 +1,6 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { useParams } from 'react-router-dom';
 import './index.css';
 
 const Navbar = () => {
@@ -9,27 +8,29 @@ const Navbar = () => {
     const types = ['square', 'cirle'];  
     const colors = ['red', 'gray', 'blue', 'cyan', 'yellow', 'orange'];
 
-    const { form, color } = useParams();
+    const [selectedType, setSelectedType] = useState(1)
+    const getSelectedType = (item) => {
+        setSelectedType(item)
+    }
 
-    const changeColor = () => {
-        if(!color) {
-            return 'red'
-        } else return color
+    const [selectedColor, setSelectedColor] = useState('red')
+    const getSelectedColor = (item) => {
+        setSelectedColor(item)
     }
 
     return (
         <div> 
             <div className='type-wrap'>
                 {types.map((item) => 
-                <Link key={item} to={`/figure/${item}/${changeColor()}`}>
-                    <div className='type'> {item} </div>
+                <Link key={item} to={`/figure/${item}/${selectedColor}`}>
+                    <div className='type' onClick={() => getSelectedType(item)}> {item} </div>
                 </Link>)}
             </div>
 
             <div className='color-wrap'>
                 {colors.map((item) =>
-                <Link key={item} to={`/figure/${form}/${item}`}>
-                    <div className='color'> {item} </div>
+                <Link key={item} to={`/figure/${selectedType}/${item}`}>
+                    <div className='color' onClick={() => getSelectedColor(item)}> {item} </div>
                 </Link>)}
             </div>
         </div>

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Figure from '../Figure';
 import Navbar from '../Navbar';
@@ -12,14 +11,14 @@ const App = () => {
   return (
     <Router>
       <div>
+        <Navbar />
         <Switch>
 
           <Route path="/figure/:form/:color">
-            <Navbar />
+            <Figure />
           </Route>
 
           <Route path="/">
-            <Navbar />
           </Route>
           
         </Switch>
